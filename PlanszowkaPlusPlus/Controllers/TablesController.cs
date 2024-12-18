@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PlanszówkaPlusplus.Models;
+using PlanszowkaPlusPlus.Models;
 using PlanszowkaPlusPlus.Data;
 
 namespace PlanszowkaPlusPlus.Controllers

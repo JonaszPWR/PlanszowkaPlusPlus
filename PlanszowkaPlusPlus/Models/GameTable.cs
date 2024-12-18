@@ -1,4 +1,4 @@
-﻿namespace PlanszówkaPlusplus.Models
+﻿namespace PlanszowkaPlusPlus.Models
 {
     public class GameTable
     {
@@ -7,4 +7,8 @@
         public int number { get; set; }
         public bool isFree { get; set; }
     }
+
+
+    
+
 }

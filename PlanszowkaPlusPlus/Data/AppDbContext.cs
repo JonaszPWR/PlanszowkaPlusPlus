@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlanszówkaPlusplus.Models;
+using PlanszowkaPlusPlus.Models;
 
 namespace PlanszowkaPlusPlus.Data
 {
