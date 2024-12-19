@@ -14,6 +14,15 @@ var connectString = builder.Configuration.GetConnectionString("AppDbConnectionSt
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    if(!dbContext.Database.CanConnect())
+    {
+        throw new NotImplementedException("Can't connect to database");
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -5,8 +5,7 @@ namespace PlanszowkaPlusPlus.Models {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Email { get; set; }
-
+        public string Email { get; set; }//hashing or encryption?
         public DateTime RegistrationDate { get; set; }
         public ICollection<Rent> Rent { get; set; }
     }

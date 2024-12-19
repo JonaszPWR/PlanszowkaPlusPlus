@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PlanszowkaPlusPlus.Models;
 using PlanszowkaPlusPlus.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace PlanszowkaPlusPlus.Controllers
 {
@@ -16,12 +17,18 @@ namespace PlanszowkaPlusPlus.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTable (GameTable table)
+        public async Task<IActionResult> AddTable(GameTable table)
         {
             _appDbContext.GameTables.Add(table);
             await _appDbContext.SaveChangesAsync();
 
             return Ok(table);
+        }
+        [HttpGet]
+        public async Task<IActionResult> ViewTables()
+        {
+            var tables = await _appDbContext.GameTables.ToListAsync();
+            return Ok(tables);
         }
     }
 }
