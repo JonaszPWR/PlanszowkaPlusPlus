@@ -25,7 +25,7 @@ namespace PlanszowkaPlusPlus.Controllers
             return Ok(member);
         }
         [HttpGet]
-        public async Task<IActionResult> ViewTables()
+        public async Task<IActionResult> ViewMembers()
         {
             var members = await _appDbContext.GameTables.ToListAsync();
             return Ok(members);
