@@ -7,7 +7,7 @@
         public int Number { get; set; }
         public bool IsFree { get; set; }
         //relation properties
-        public ICollection<Reservation> Reservations { get; set; }
+        public ICollection<Reservation>? Reservations { get; set; }
     }
 
 }
