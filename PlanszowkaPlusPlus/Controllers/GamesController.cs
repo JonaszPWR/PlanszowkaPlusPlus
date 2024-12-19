@@ -60,8 +60,8 @@ namespace PlanszowkaPlusPlus.Controllers
 
             game.Title = updatedGame.Title;
             game.Category = updatedGame.Category;
-            game.TotalCount = updatedGame.TotalNumber;
-            game.AvailableCount = updatedGame.AvailableNumber;
+            game.TotalNumber = updatedGame.TotalNumber;
+            game.AvailableNumber = updatedGame.AvailableNumber;
 
             await _appDbContext.SaveChangesAsync();
             return Ok(game);

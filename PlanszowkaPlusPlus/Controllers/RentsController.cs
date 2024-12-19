@@ -34,7 +34,7 @@ namespace PlanszowkaPlusPlus.Controllers
 
             game.AvailableNumber--;
 
-            _appDbContext.Rents.Add(rent);
+            _appDbContext.Rentals.Add(rent);
             await _appDbContext.SaveChangesAsync();
 
             await transaction.CommitAsync();
@@ -44,7 +44,7 @@ namespace PlanszowkaPlusPlus.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRents([FromQuery] int? memberId, [FromQuery] int? gameId)
         {
-            IQueryable<Rent> rentsQuery = _appDbContext.Rents.Include(r => r.Game).Include(r => r.Member);
+            IQueryable<Rent> rentsQuery = _appDbContext.Rentals.Include(r => r.Game).Include(r => r.Member);
 
             if (memberId.HasValue)
             {
@@ -65,7 +65,7 @@ namespace PlanszowkaPlusPlus.Controllers
         {
             using var transaction = _appDbContext.Database.BeginTransaction();
 
-            var rent = await _appDbContext.Rents.Include(r => r.Game).FirstOrDefaultAsync(r => r.Id == id);
+            var rent = await _appDbContext.Rentals.Include(r => r.Game).FirstOrDefaultAsync(r => r.Id == id);
             if (rent == null)
             {
                 return NotFound($"Rent with ID {id} not found.");
