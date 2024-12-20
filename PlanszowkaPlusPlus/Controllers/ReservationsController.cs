@@ -22,14 +22,14 @@ namespace PlanszowkaPlusPlus.Controllers
             _appDbContext.Reservations.Add(reservation);
             var table = _appDbContext.GameTables.Single(t => t.Id == reservation.TableId);
             //to na razie pozwala na dwie rezerwacje w tym samym czasie
-            if (table != null)
-            {
-                if (null == table.Reservations)
-                {
-                    table.Reservations = new List<Reservation>();
-                }
-                table.Reservations.Append(reservation);
-            }
+            //if (table != null)
+            //{
+            //    if (null == table.Reservations)
+            //    {
+            //        table.Reservations = new List<Reservation>();
+            //    }
+            //    table.Reservations.Append(reservation);
+            //}
             await _appDbContext.SaveChangesAsync();
             transaction.Commit();
 

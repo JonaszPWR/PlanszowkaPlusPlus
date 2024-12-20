@@ -19,10 +19,10 @@ namespace PlanszowkaPlusPlus.Controllers
         [HttpPost]
         public async Task<IActionResult> AddMember(Member member)
         {
-            if(null == member.Rent) //this way creating a new member doesn't require this field
-            { 
-                member.Rent = new List<Rent>();
-            }
+            //if(null == member.Rent) //this way creating a new member doesn't require this field
+            //{ 
+            //    member.Rent = new List<Rent>();
+            //}
             _appDbContext.Members.Add(member);
             await _appDbContext.SaveChangesAsync();
 
