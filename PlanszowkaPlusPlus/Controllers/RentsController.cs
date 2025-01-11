@@ -17,14 +17,15 @@ namespace PlanszowkaPlusPlus.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddRent(Rent rent)
+        public async Task<IActionResult> AddRent(RentDTO rentDTO)
         {
             using var transaction = _appDbContext.Database.BeginTransaction();
 
-            var game = await _appDbContext.Games.FindAsync(rent.GameId);
+            var game = await _appDbContext.Games.FindAsync(rentDTO.GameId);
+            var member = await _appDbContext.Members.FindAsync(rentDTO.MemberId);
             if (game == null)
             {
-                return NotFound($"Game with ID {rent.GameId} not found.");
+                return NotFound($"Game with ID {rentDTO.GameId} not found.");
             }
 
             if (game.AvailableNumber <= 0)
@@ -32,7 +33,14 @@ namespace PlanszowkaPlusPlus.Controllers
                 return BadRequest("No copies of the game are available for rent.");
             }
 
+            if (null == member) 
+            {
+                return NotFound($"No member with ID {rentDTO.MemberId}");
+            }
             game.AvailableNumber--;
+            //TODO: add end date support
+            var rent = new Rent { Id = rentDTO.Id, RentDate = rentDTO.RentDate, Game = game, 
+                GameId = game.Id, Member = member, MemberId = member.Id};
 
             _appDbContext.Rentals.Add(rent);
             await _appDbContext.SaveChangesAsync();

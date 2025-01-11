@@ -13,8 +13,14 @@ namespace PlanszowkaPlusPlus.Models
         [ForeignKey("Member")]
         public int MemberId { get; set; }
         //relation properties
-        //public Game Game { get; set; }
-        //public Member Member { get; set; }
-
+        public Game Game { get; set; }
+        public Member Member { get; set; }
+    }
+    public class RentDTO
+    {
+        public int Id { get; set; }
+        public DateOnly RentDate { get; set; }
+        public int GameId { get; set; }
+        public int MemberId { get; set; }
     }
 }
