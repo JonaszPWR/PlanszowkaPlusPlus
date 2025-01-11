@@ -41,49 +41,49 @@ namespace PlanszowkaPlusPlus.Controllers
             return Ok(rent);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetRents([FromQuery] int? memberId, [FromQuery] int? gameId)
-        {
-            IQueryable<Rent> rentsQuery = _appDbContext.Rentals.Include(r => r.Game).Include(r => r.Member);
+        //[HttpGet]
+        //public async Task<IActionResult> GetRents([FromQuery] int? memberId, [FromQuery] int? gameId)
+        //{
+        //    IQueryable<Rent> rentsQuery = _appDbContext.Rentals.Include(r => r.Game).Include(r => r.Member);
 
-            if (memberId.HasValue)
-            {
-                rentsQuery = rentsQuery.Where(r => r.MemberId == memberId);
-            }
+        //    if (memberId.HasValue)
+        //    {
+        //        rentsQuery = rentsQuery.Where(r => r.MemberId == memberId);
+        //    }
 
-            if (gameId.HasValue)
-            {
-                rentsQuery = rentsQuery.Where(r => r.GameId == gameId);
-            }
+        //    if (gameId.HasValue)
+        //    {
+        //        rentsQuery = rentsQuery.Where(r => r.GameId == gameId);
+        //    }
 
-            var rents = await rentsQuery.ToListAsync();
-            return Ok(rents);
-        }
+        //    var rents = await rentsQuery.ToListAsync();
+        //    return Ok(rents);
+        //}
 
-        [HttpPut("{id}/return")]
-        public async Task<IActionResult> ReturnRent(int id)
-        {
-            using var transaction = _appDbContext.Database.BeginTransaction();
+        //[HttpPut("{id}/return")]
+        //public async Task<IActionResult> ReturnRent(int id)
+        //{
+        //    using var transaction = _appDbContext.Database.BeginTransaction();
 
-            var rent = await _appDbContext.Rentals.Include(r => r.Game).FirstOrDefaultAsync(r => r.Id == id);
-            if (rent == null)
-            {
-                return NotFound($"Rent with ID {id} not found.");
-            }
+        //    var rent = await _appDbContext.Rentals.Include(r => r.Game).FirstOrDefaultAsync(r => r.Id == id);
+        //    if (rent == null)
+        //    {
+        //        return NotFound($"Rent with ID {id} not found.");
+        //    }
 
-            if (rent.ReturnDate.HasValue)
-            {
-                return BadRequest("This rent has already been returned.");
-            }
+        //    if (rent.ReturnDate.HasValue)
+        //    {
+        //        return BadRequest("This rent has already been returned.");
+        //    }
 
-            rent.ReturnDate = DateOnly.FromDateTime(DateTime.Now);
+        //    rent.ReturnDate = DateOnly.FromDateTime(DateTime.Now);
 
-            rent.Game.AvailableNumber++;
+        //    rent.Game.AvailableNumber++;
 
-            await _appDbContext.SaveChangesAsync();
+        //    await _appDbContext.SaveChangesAsync();
 
-            await transaction.CommitAsync();
-            return Ok(rent);
-        }
+        //    await transaction.CommitAsync();
+        //    return Ok(rent);
+        //}
     }
 }
