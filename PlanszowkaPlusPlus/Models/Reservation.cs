@@ -14,7 +14,7 @@ namespace PlanszowkaPlusPlus.Models
         [ForeignKey("Member")]
         public int MemberId { get; set; }
         //relation properties
-        public GameTable GameTable { get; set; }
-        public Member Member { get; set; }
+        //public GameTable GameTable { get; set; }
+        //public Member Member { get; set; }
     }
 }
