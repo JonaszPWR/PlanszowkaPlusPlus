@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
 
@@ -52,6 +53,13 @@ namespace PlanszowkaPlusPlus.Controllers
             transaction.Commit();
 
             return Ok(reservation);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ViewReservations()
+        {
+            var reservations = await _appDbContext.Reservations.ToListAsync();
+            return Ok(reservations);
         }
     }
 }
