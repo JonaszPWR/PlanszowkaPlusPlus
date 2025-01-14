@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\controllers\\rentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\rent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\models\\rent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -60,27 +56,27 @@
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Controllers\\RentsController.cs",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Controllers\\RentsController.cs",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Controllers\\RentsController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T13:52:42.343Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Reservation.cs",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Models\\Reservation.cs",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Models\\Reservation.cs",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Models\\Reservation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T13:04:10.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Member.cs",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Models\\Member.cs",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Models\\Member.cs",
@@ -118,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "PlanszowkaPlusPlus.http",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus.http",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\PlanszowkaPlusPlus.http",
@@ -130,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Data\\AppDbContext.cs",
@@ -139,40 +135,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T09:29:56.616Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "bb4bb140-c186-441c-8525-03c6ffb2ba8a",
-        "Display": 1,
-        "X": 1188,
-        "Y": 244,
-        "Width": 1447,
-        "Height": 862,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Rent.cs",
-              "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Models\\Rent.cs",
-              "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Models\\Rent.cs",
-              "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Models\\Rent.cs",
-              "RelativeToolTip": "PlanszowkaPlusPlus\\Models\\Rent.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAuwA0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T13:46:27.321Z",
-              "EditorCaption": ""
             }
           ]
         }
