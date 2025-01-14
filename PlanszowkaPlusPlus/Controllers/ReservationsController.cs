@@ -23,8 +23,8 @@ namespace PlanszowkaPlusPlus.Controllers
              */
             using var transaction = _appDbContext.Database.BeginTransaction();
             var member = await _appDbContext.Members.FindAsync(DTO.MemberId);
-            var table = await _appDbContext.GameTables.FindAsync(DTO.TableId);
-            //var table = _appDbContext.GameTables.Single(t => t.Id == DTO.TableId);
+            //var table = await _appDbContext.GameTables.FindAsync(DTO.TableId);
+            var table = _appDbContext.GameTables.Single(t => t.Id == DTO.TableId);
 
             if (null == member)
             {
@@ -42,12 +42,12 @@ namespace PlanszowkaPlusPlus.Controllers
                 TimeStart = DTO.TimeStart,
                 TimeEnd = DTO.TimeEnd,
                 TableId = DTO.TableId,
-                /*gametable,*/
+                GameTable = table,
                 MemberId = DTO.MemberId,
                 Member = member
             };
 
-            _appDbContext.Reservations.Add(new Reservation { });
+            _appDbContext.Reservations.Add(reservation);
             await _appDbContext.SaveChangesAsync();
             transaction.Commit();
 

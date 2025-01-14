@@ -7,7 +7,5 @@ namespace PlanszowkaPlusPlus.Models {
         public string Surname { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;//hashing or encryption?
         public DateTime RegistrationDate { get; set; }
-        //navigation properties
-        //public ICollection<Rent>? Rent { get; set; }//when updating a Member, if(!member.Rent) member.Rent =  new List<Rent>;
     }
 }
