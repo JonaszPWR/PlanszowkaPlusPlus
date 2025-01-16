@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using PlanszowkaPlusPlus.Data;
+using PlanszowkaPlusPlus.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +12,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+    
+builder.Services.AddScoped<IPasswordHasher<Employee>, PasswordHasher<Employee>>();
+
 
 var app = builder.Build();
 
