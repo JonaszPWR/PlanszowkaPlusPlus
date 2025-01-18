@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddRazorPages();
 
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
@@ -40,6 +41,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseHttpsRedirection();
+//app.UseStaticFiles();
+app.UseRouting();
+app.MapRazorPages();
 
 app.UseHttpsRedirection();
 
