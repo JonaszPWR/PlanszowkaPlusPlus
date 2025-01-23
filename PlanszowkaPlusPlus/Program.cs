@@ -7,11 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
+builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
+{
+    options.Cookie.Name = "MyCookieAuth";
+    options.LoginPath = "/Account/Login";
+});
 
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
@@ -22,7 +27,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddDefaultTokenProviders();
     
 builder.Services.AddScoped<IPasswordHasher<Employee>, PasswordHasher<Employee>>();
-
 
 var app = builder.Build();
 
@@ -35,6 +39,9 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+app.UseAuthentication(); 
+app.UseAuthorization();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -44,14 +51,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 //app.UseStaticFiles();
 app.UseRouting();
+
+
 app.MapRazorPages();
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
 app.MapControllers();
-
-app.UseAuthentication(); 
 
 app.Run();
