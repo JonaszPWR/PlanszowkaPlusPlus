@@ -38,14 +38,18 @@ namespace PlanszowkaPlusPlus.Pages.Account
                 if (result == PasswordVerificationResult.Success)
                 {
                     //Creating the security context
-                    var claims = new List<Claim> { new Claim(ClaimTypes.Email, Credential.Username) };
-                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var claims = new List<Claim> { 
+                        new Claim(ClaimTypes.Email, Credential.Username), 
+                        new Claim(ClaimTypes.Name, employee.Name) 
+                    };
+                    var identity = new ClaimsIdentity(claims, "MyCookieAuth"); 
+                    //var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
                     await HttpContext.SignInAsync("MyCookieAuth", principal);
                     //Redirect to home page
                     Console.WriteLine("Redirecting");
-                    return RedirectToPage("/Index");
+                    return RedirectToPage("/Members/Index");
                 }
                 else
                 {
@@ -56,6 +60,10 @@ namespace PlanszowkaPlusPlus.Pages.Account
             {   
                 Console.WriteLine("Exception thrown:" + e.Message);
                 //browser popup for login error?
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
             return Page();
         }

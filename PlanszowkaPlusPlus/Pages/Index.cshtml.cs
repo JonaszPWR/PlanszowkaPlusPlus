@@ -16,7 +16,7 @@ namespace PlanszowkaPlusPlus.Pages
 
         public void OnGet()
         {
-
+            var authenticated = HttpContext.User.Identity.IsAuthenticated;
         }
     }
 }

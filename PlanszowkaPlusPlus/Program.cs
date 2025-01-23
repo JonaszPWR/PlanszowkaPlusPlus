@@ -2,12 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,7 +15,12 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
     options.Cookie.Name = "MyCookieAuth";
     options.LoginPath = "/Account/Login";
 });
-
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie( options =>
+//{
+//    //options.Cookie.Name = "MyCookieAuth";
+//    options.LoginPath = "/Account/Login";
+//});
+builder.Services.AddAuthorization();
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
@@ -38,20 +41,20 @@ using (var scope = app.Services.CreateScope())
         throw new NotImplementedException("Can't connect to database");
     }
 }
+app.UseHttpsRedirection();
+app.UseRouting();
 
 app.UseAuthentication(); 
 app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-app.UseHttpsRedirection();
-//app.UseStaticFiles();
-app.UseRouting();
-
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+//app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.MapRazorPages();
 app.MapControllers();
