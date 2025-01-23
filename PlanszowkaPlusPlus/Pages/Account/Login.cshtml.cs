@@ -32,38 +32,46 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
             try
             {
-                Employee? employee = _context.Employees.Single(e => e.Email == Credential.Username);
+                // Check if the user exists
+                Employee? employee = _context.Employees.SingleOrDefault(e => e.Email == Credential.Username);
+                if (employee == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return Page();
+                }
+
+                // Verify password
                 var passwordCheck = new PasswordHasher<Employee>();
                 var result = passwordCheck.VerifyHashedPassword(employee, employee.PasswordHash, Credential.Password);
                 if (result == PasswordVerificationResult.Success)
                 {
-                    //Creating the security context
-                    var claims = new List<Claim> { 
-                        new Claim(ClaimTypes.Email, Credential.Username), 
-                        new Claim(ClaimTypes.Name, employee.Name) 
-                    };
-                    var identity = new ClaimsIdentity(claims, "MyCookieAuth"); 
-                    //var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+                    // Create security context
+                    var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Email, Credential.Username),
+                new Claim(ClaimTypes.Name, employee.Name)
+            };
 
+                    var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+                    var principal = new ClaimsPrincipal(identity);
+
+                    // Sign in user
                     await HttpContext.SignInAsync("MyCookieAuth", principal);
-                    //Redirect to home page
-                    Console.WriteLine("Redirecting");
+
+                    // Debugging
+                    Console.WriteLine("User signed in successfully.");
                     return RedirectToPage("/Members/Index");
                 }
                 else
                 {
-                    Console.WriteLine("It didn't work");
+                    Console.WriteLine("Password verification failed.");
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
-            }
-            catch (InvalidOperationException e)
-            {   
-                Console.WriteLine("Exception thrown:" + e.Message);
-                //browser popup for login error?
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine($"An error occurred: {e.Message}");
+                ModelState.AddModelError(string.Empty, "An error occurred. Please try again.");
             }
             return Page();
         }
