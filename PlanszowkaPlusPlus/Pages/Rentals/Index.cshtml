@@ -5,10 +5,12 @@
     ViewData["Title"] = "Index";
 }
 
+<link rel="stylesheet" href="~/css/site.css" />
+
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -50,5 +52,13 @@
             </td>
         </tr>
 }
+
+
+
     </tbody>
 </table>
+<div>
+    <form method="get" action="/Index" class="d-inline">
+        <button type="submit" class="btn btn-secondary">Main page</Main></button>
+    </form>
+</div>

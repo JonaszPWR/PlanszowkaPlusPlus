@@ -20,9 +20,18 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
         }
 
         public IActionResult OnGet()
-        {
-        ViewData["TableId"] = new SelectList(_context.GameTables, "Id", "Id");
-        ViewData["MemberId"] = new SelectList(_context.Members, "Id", "Id");
+{
+            var tables = _context.GameTables.ToList();
+            var members = _context.Members.ToList();
+
+            if (tables.Count == 0 || members.Count == 0)
+            {
+                // Optionally handle the case where there are no tables or members in the database
+                ModelState.AddModelError(string.Empty, "No tables or members available to create a reservation.");
+            }
+
+            ViewData["TableId"] = new SelectList(tables, "Id", "Id");
+            ViewData["MemberId"] = new SelectList(members, "Id", "Id");
             return Page();
         }
 

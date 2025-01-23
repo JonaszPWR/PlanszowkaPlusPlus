@@ -19,13 +19,25 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
             _context = context;
         }
 
-        public IList<Reservation> Reservation { get;set; } = default!;
+        public IList<Reservation> Reservation { get; set; } = default!;
+
+        [BindProperty(SupportsGet = true)]
+        public DateOnly? FilterDate { get; set; } 
 
         public async Task OnGetAsync()
         {
-            Reservation = await _context.Reservations
+            
+            var query = _context.Reservations
                 .Include(r => r.GameTable)
-                .Include(r => r.Member).ToListAsync();
+                .Include(r => r.Member)
+                .AsQueryable();
+
+            if (FilterDate.HasValue)
+            {
+                query = query.Where(r => r.ReservationDate == FilterDate.Value);
+            }
+
+            Reservation = await query.ToListAsync();
         }
     }
 }

@@ -4,13 +4,18 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to PlanszówkaPlusPlus</h1> <!--make the page look good with buttons etc.-->
-    <a href="/Members">Members</a><br />
-    <a href="/Games">Games</a><br />
-    <a href="/Rentals">Rentals</a><br />
-    <a href="/GameTables">Tables</a><br />
-    <a href="/Reservations">Reservations</a>
-</div>
+<link rel="stylesheet" href="~/css/site.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<!--<p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+
+<div class="text-center mt-5">
+    <h1 class="display-4 mb-4">Welcome to PlanszówkaPlusPlus</h1>
+
+    <div class="btn-group-vertical">
+        <a href="/Members" class="btn btn-primary btn-lg mb-2">Members</a>
+        <a href="/Games" class="btn btn-success btn-lg mb-2">Games</a>
+        <a href="/Rentals" class="btn btn-warning btn-lg mb-2">Rentals</a>
+        <a href="/GameTables" class="btn btn-info btn-lg mb-2">Tables</a>
+        <a href="/Reservations" class="btn btn-danger btn-lg">Reservations</a>
+    </div>
+</div>

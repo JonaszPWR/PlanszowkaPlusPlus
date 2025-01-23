@@ -5,6 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
+<link rel="stylesheet" href="~/css/site.css" />
+
 <h1>Create</h1>
 
 <h4>GameTable</h4>
@@ -31,7 +33,9 @@
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <form method="get" action="/GameTables/Index" class="d-inline">
+        <button type="submit" class="btn btn-secondary">Back to List</button>
+    </form>
 </div>
 
 @section Scripts {

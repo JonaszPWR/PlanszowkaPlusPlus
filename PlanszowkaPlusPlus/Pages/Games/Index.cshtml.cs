@@ -19,11 +19,31 @@ namespace PlanszowkaPlusPlus.Pages.Games
             _context = context;
         }
 
-        public IList<Game> Game { get;set; } = default!;
+        public IList<Game> Game { get; set; } = default!;
+        public List<string> Categories { get; set; } = new(); // Store unique categories
+
+        [BindProperty(SupportsGet = true)]
+        public string? SelectedCategory { get; set; } // Selected category from the dropdown
 
         public async Task OnGetAsync()
         {
-            Game = await _context.Games.ToListAsync();
+            // Retrieve all unique categories for the dropdown
+            Categories = await _context.Games
+                .Select(g => g.Category)
+                .Distinct()
+                .OrderBy(c => c)
+                .ToListAsync();
+
+            // Start with all games
+            var gamesQuery = _context.Games.AsQueryable();
+
+            // Filter by category if one is selected
+            if (!string.IsNullOrEmpty(SelectedCategory))
+            {
+                gamesQuery = gamesQuery.Where(g => g.Category == SelectedCategory);
+            }
+
+            Game = await gamesQuery.ToListAsync();
         }
     }
 }
