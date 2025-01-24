@@ -60,7 +60,7 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
                     // Debugging
                     Console.WriteLine("User signed in successfully.");
-                    return RedirectToPage("/Members/Index");
+                    return RedirectToPage("/Index");
                 }
                 else
                 {

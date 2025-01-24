@@ -32,6 +32,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -134,6 +138,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_LoginStatusPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblN0YXR1c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_ValidationScriptsPartial.cshtml]
