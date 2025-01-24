@@ -32,7 +32,6 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
             try
             {
-                // Check if the user exists
                 Employee? employee = _context.Employees.SingleOrDefault(e => e.Email == Credential.Username);
                 if (employee == null)
                 {
@@ -57,14 +56,11 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
                     // Sign in user
                     await HttpContext.SignInAsync("MyCookieAuth", principal);
-
-                    // Debugging
-                    Console.WriteLine("User signed in successfully.");
+                    // Redirection
                     return RedirectToPage("/Index");
                 }
                 else
                 {
-                    Console.WriteLine("Password verification failed.");
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
             }
