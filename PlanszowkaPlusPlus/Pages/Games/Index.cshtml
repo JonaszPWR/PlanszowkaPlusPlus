@@ -2,14 +2,30 @@
 @model PlanszowkaPlusPlus.Pages.Games.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Games Index";
 }
+<link rel="stylesheet" href="~/css/site.css" />
 
-<h1>Index</h1>
+<h1>Games</h1>
 
+<!-- Dropdown for Filtering by Category -->
+<form method="get" class="mb-3">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select name="SelectedCategory" id="categoryFilter" onchange="this.form.submit()" class="form-control d-inline w-auto">
+        <option value="" selected="@(string.IsNullOrEmpty(Model.SelectedCategory) ? "true" : null)">All</option>
+        @foreach (var category in Model.Categories)
+        {
+            <option value="@category" selected="@(Model.SelectedCategory == category ? "true" : null)">@category</option>
+        }
+    </select>
+</form>
+
+<!-- "Create New" Button -->
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
+
+<!-- Table for Displaying Games -->
 <table class="table">
     <thead>
         <tr>
@@ -29,29 +45,34 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Game) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AvailableNumber)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Game)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvailableNumber)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-<p>
-    <a asp-page="/Index">Main page</a>
-</p>
+
+<!-- Back to Main Page Button -->
+<div>
+    <form method="get" action="/Index" class="d-inline">
+        <button type="submit" class="btn btn-secondary">Main page</button>
+    </form>
+</div>

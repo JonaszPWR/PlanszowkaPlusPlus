@@ -5,59 +5,53 @@
     ViewData["Title"] = "Index";
 }
 
+<link rel="stylesheet" href="~/css/site.css" />
+
 <h1>Index</h1>
 
+<form method="get">
+    <div class="form-group">
+        <label for="filter-date">Filter by Reservation Date:</label>
+        <input type="date" id="filter-date" name="FilterDate" class="form-control" value="@Model.FilterDate?.ToString("yyyy-MM-dd")" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+    <a asp-page="./Index" class="btn btn-secondary">Clear Filter</a>
+</form>
+
+
 <p>
-    <a href="/Reservations/Create">Create New</a>
+    <a href="/Reservations/Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].ReservationDate)<!--TODO: make proper display names?-->
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].TimeStart)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].TimeEnd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].GameTable)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].Member)<!--TODO: show members by ID-->
-            </th>
+            <th>Reservation Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Table Number</th>
+            <th>Member Name</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Reservation) {
+    @foreach (var item in Model.Reservation) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReservationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeStart)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeEnd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GameTable.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Member.Id)
-            </td>
+            <td>@Html.DisplayFor(modelItem => item.ReservationDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.TimeStart)</td>
+            <td>@Html.DisplayFor(modelItem => item.TimeEnd)</td>
+            <td>@item.GameTable?.Number</td>
+            <td>@item.Member?.Name</td>
             <td>
                 <a asp-page="/Reservations/Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="/Reservations/Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="/Reservations/Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="/Reservations/Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="/Reservations/Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
-<p>
-    <a asp-page="/Index">Main page</a><!--nie wiem, czy Index to nie będzie logowanie-->
-</p>
+<div>
+    <form method="get" action="/Index" class="d-inline">
+        <button type="submit" class="btn btn-secondary">Main page</button>
+    </form>
+</div>
