@@ -14,10 +14,12 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
 {
     options.Cookie.Name = "MyCookieAuth";
     options.LoginPath = "/Account/Login";
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
-    options.SlidingExpiration = true;
 });
-
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie( options =>
+//{
+//    //options.Cookie.Name = "MyCookieAuth";
+//    options.LoginPath = "/Account/Login";
+//});
 builder.Services.AddAuthorization();
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
@@ -47,12 +49,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.MapRazorPages();

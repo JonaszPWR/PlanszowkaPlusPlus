@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using PlanszowkaPlusPlus.Models;
 
 namespace PlanszowkaPlusPlus.Pages.Reservations
 {
+    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
     public class IndexModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;

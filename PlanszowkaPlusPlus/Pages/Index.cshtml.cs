@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PlanszowkaPlusPlus.Pages
 {
-    //[Authorize]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
