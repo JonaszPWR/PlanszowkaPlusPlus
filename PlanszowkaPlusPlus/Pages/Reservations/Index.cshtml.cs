@@ -24,8 +24,9 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
         public IList<Reservation> Reservation { get; set; } = default!;
 
         [BindProperty(SupportsGet = true)]
-        public DateOnly? FilterDate { get; set; } 
-
+        public DateOnly? FilterDate { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public bool ShowHiddenRecords { get; set; } = false;
         public async Task OnGetAsync()
         {
             
@@ -37,6 +38,11 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
             if (FilterDate.HasValue)
             {
                 query = query.Where(r => r.ReservationDate == FilterDate.Value);
+            }
+
+            if (!ShowHiddenRecords)
+            {
+                query = query.Where(r => r.IsArchived == false);
             }
 
             Reservation = await query.ToListAsync();

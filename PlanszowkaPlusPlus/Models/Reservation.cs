@@ -8,6 +8,7 @@ namespace PlanszowkaPlusPlus.Models
         public DateOnly ReservationDate { get; set; }
         public TimeOnly TimeStart { get; set; }
         public TimeOnly TimeEnd { get; set; }
+        public bool IsArchived { get; set; } = false;
 
         [ForeignKey("GameTable")]
         public int TableId { get; set; }

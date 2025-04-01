@@ -9,19 +9,37 @@
 
 <h1>Index</h1>
 
+<!-- Combined Form -->
 <form method="get">
     <div class="form-group">
         <label for="filter-date">Filter by Reservation Date:</label>
-        <input type="date" id="filter-date" name="FilterDate" class="form-control" value="@Model.FilterDate?.ToString("yyyy-MM-dd")" />
+        <input type="date" id="filter-date" name="FilterDate" class="form-control"
+               value="@Model.FilterDate?.ToString("yyyy-MM-dd")" />
     </div>
-    <button type="submit" class="btn btn-primary">Filter</button>
-    <a asp-page="./Index" class="btn btn-secondary">Clear Filter</a>
-</form>
 
+    <!-- Checkbox Handling -->
+    <div>
+        <!--ASP.NET shenanigans-->
+        @if (!Model.ShowHiddenRecords) 
+        {
+            <input type="hidden" name="ShowHiddenRecords" value="false" />
+        }
+        <!--<input type="hidden" name="ShowHiddenRecords" value="false" />-->
+        <label>
+            <input type="checkbox" name="ShowHiddenRecords" value="true"
+            @(Model.ShowHiddenRecords ? "checked=\"checked\"" : "") />
+            Show Hidden Records
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Apply Filters</button>
+    <a asp-page="./Index" class="btn btn-secondary">Clear Filters</a>
+</form>
 
 <p>
     <a href="/Reservations/Create" class="btn btn-primary">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -34,24 +52,26 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Reservation) {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.ReservationDate)</td>
-            <td>@Html.DisplayFor(modelItem => item.TimeStart)</td>
-            <td>@Html.DisplayFor(modelItem => item.TimeEnd)</td>
-            <td>@item.GameTable?.Number</td>
-            <td>@item.Member?.Name</td>
-            <td>
-                <a asp-page="/Reservations/Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="/Reservations/Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="/Reservations/Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model.Reservation)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ReservationDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.TimeStart)</td>
+                <td>@Html.DisplayFor(modelItem => item.TimeEnd)</td>
+                <td>@item.GameTable?.Number</td>
+                <td>@item.Member?.Name</td>
+                <td>
+                    <a asp-page="/Reservations/Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="/Reservations/Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="/Reservations/Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
 <div>
     <form method="get" action="/Index" class="d-inline">
-        <button type="submit" class="btn btn-secondary">Main page</button>
+        <button type="submit" class="btn btn-secondary">Main Page</button>
     </form>
 </div>
