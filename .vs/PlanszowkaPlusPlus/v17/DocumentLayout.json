@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\archived.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\archived.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\archived.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\archived.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\archived.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\archived.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\pages\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\pages\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|solutionrelative:planszowkaplusplus\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77DC8A3A-DEDF-4F2F-BA5D-46AF35B115F7}|PlanszowkaPlusPlus\\PlanszowkaPlusPlus.csproj|c:\\users\\jonasz\\documents\\github\\planszowkaplusplus\\planszowkaplusplus\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Reservation.cs",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Models\\Reservation.cs",
@@ -68,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Details.cshtml",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Pages\\Reservations\\Details.cshtml",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Details.cshtml",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Pages\\Reservations\\Details.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowEIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-02T14:27:50.582Z",
               "EditorCaption": ""
@@ -87,20 +87,20 @@
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAUwD0AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwDIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-02T13:47:20.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Archived.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml.cs",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml.cs",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml.cs",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Pages\\Reservations\\Archived.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T13:47:20.566Z",
               "EditorCaption": ""
@@ -119,28 +119,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowBcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-01T14:46:53.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml.cs",
               "ToolTip": "C:\\Users\\Jonasz\\Documents\\GitHub\\PlanszowkaPlusPlus\\PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml.cs",
               "RelativeToolTip": "PlanszowkaPlusPlus\\Pages\\Reservations\\Index.cshtml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACwAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwDAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T11:22:32.596Z"
+              "WhenOpened": "2025-04-01T11:22:32.596Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

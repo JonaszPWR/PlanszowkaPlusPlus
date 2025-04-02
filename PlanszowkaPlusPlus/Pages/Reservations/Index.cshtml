@@ -7,37 +7,21 @@
 
 <link rel="stylesheet" href="~/css/site.css" />
 
-<h1>Index</h1>
+<h1>Reservations</h1>
 
-<!-- Combined Form -->
 <form method="get">
     <div class="form-group">
         <label for="filter-date">Filter by Reservation Date:</label>
         <input type="date" id="filter-date" name="FilterDate" class="form-control"
                value="@Model.FilterDate?.ToString("yyyy-MM-dd")" />
     </div>
-
-    <!-- Checkbox Handling -->
-    <div>
-        <!--ASP.NET shenanigans-->
-        @if (!Model.ShowHiddenRecords) 
-        {
-            <input type="hidden" name="ShowHiddenRecords" value="false" />
-        }
-        <!--<input type="hidden" name="ShowHiddenRecords" value="false" />-->
-        <label>
-            <input type="checkbox" name="ShowHiddenRecords" value="true"
-            @(Model.ShowHiddenRecords ? "checked=\"checked\"" : "") />
-            Show Hidden Records
-        </label>
-    </div>
-
     <button type="submit" class="btn btn-primary">Apply Filters</button>
     <a asp-page="./Index" class="btn btn-secondary">Clear Filters</a>
 </form>
 
 <p>
     <a href="/Reservations/Create" class="btn btn-primary">Create New</a>
+    <a href="/Reservations/Archived" class="btn btn-secondary">Archived</a>
 </p>
 
 <table class="table">

@@ -27,5 +27,18 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
                 .Include(r => r.GameTable)
                 .Include(r => r.Member).ToListAsync();
         }
+        public async Task<IActionResult> OnPostUnarchiveAsync(int id)
+        {
+            var reservation = await _context.Reservations.FindAsync(id);
+            if (reservation == null)
+            {
+                return NotFound();
+            }
+
+            reservation.IsArchived = false;
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage(); 
+        }
     }
 }

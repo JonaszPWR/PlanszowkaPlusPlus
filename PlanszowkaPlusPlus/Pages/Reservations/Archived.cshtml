@@ -5,32 +5,18 @@
     ViewData["Title"] = "Archived";
 }
 
+<link rel="stylesheet" href="~/css/site.css" />
+
 <h1>Archived</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].ReservationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].TimeStart)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].TimeEnd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].IsArchived)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].GameTable)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reservation[0].Member)
-            </th>
+            <th>Reservation Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Table Number</th>
+            <th>Member ID</th><!--TODO: this but name?-->
             <th></th>
         </tr>
     </thead>
@@ -48,17 +34,16 @@
                 @Html.DisplayFor(modelItem => item.TimeEnd)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsArchived)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.GameTable.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Member.Id)
             </td>
             <td>
-                <!--remove from archive-->
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> | <!--nope-->
+                <!--remove from archive | -->
+                <form method="post" asp-page-handler="Unarchive" asp-route-id="@item.Id" class="d-inline">
+                    <button type="submit" class="btn btn-warning">Un-archive</button>
+                </form>
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
@@ -67,3 +52,10 @@
 }
     </tbody>
 </table>
+
+<div>
+    <form method="get" action="/Index" class="d-inline">
+        <button type="submit" class="btn btn-primary">Main Page</button>
+    </form>
+    <a href="/Reservations" class="btn btn-secondary">Return to Reservations</a>
+</div>
