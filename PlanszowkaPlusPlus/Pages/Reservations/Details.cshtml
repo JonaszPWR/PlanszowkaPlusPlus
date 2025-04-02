@@ -43,9 +43,31 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Reservation.Member.Id)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reservation.IsArchived)
+        </dt>
+        <dd class="col-sm-10">
+            @if(Model.Reservation.IsArchived)
+            {
+                <p>Yes</p>
+            }
+            else
+            {   
+                <p>No</p>
+            }
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Reservation.Id" class="btn btn-primary">Edit</a> |
-    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+   
+    @if(Model.Reservation.IsArchived)
+    {
+        <!--TODO: possibly add a "un_archive"" button here-->
+        <a asp-page="./Archived" class="btn btn-secondary">Back to Archived List</a>
+    }
+    else
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.Reservation.Id" class="btn btn-primary">Edit</a> <span> | </span>
+        <a asp-page="./Index" class="btn btn-secondary">Back to Reservations List</a>
+    }
 </div>

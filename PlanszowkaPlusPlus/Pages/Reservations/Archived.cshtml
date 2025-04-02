@@ -1,0 +1,69 @@
+﻿@page
+@model PlanszowkaPlusPlus.Pages.Reservations.ArchivedModel
+
+@{
+    ViewData["Title"] = "Archived";
+}
+
+<h1>Archived</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].ReservationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].TimeStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].TimeEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].IsArchived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].GameTable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservation[0].Member)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Reservation) {
+    if (item.IsArchived){
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsArchived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameTable.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.Id)
+            </td>
+            <td>
+                <!--remove from archive-->
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> | <!--nope-->
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>
