@@ -32,11 +32,17 @@
 
             <div class="form-group">
                 <label asp-for="Reservation.TableId" class="control-label"></label>
-                <select asp-for="Reservation.TableId" class ="form-control" asp-items="ViewBag.TableId"></select>
+                <select asp-for="Reservation.TableId" class ="form-control" asp-items="@(ViewData["TableId"] as SelectList)">
+                    <option value="">-- Select a Table --</option>
+                </select>
+                <span asp-validation-for="Reservation.TableId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Reservation.MemberId" class="control-label"></label>
-                <select asp-for="Reservation.MemberId" class ="form-control" asp-items="ViewBag.MemberId"></select>
+                <select asp-for="Reservation.MemberId" class ="form-control" asp-items="@(ViewData["MemberId"] as SelectList)">
+                    <option value="">-- Select a Member --</option>
+                </select>
+                <span asp-validation-for="Reservation.MemberId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
