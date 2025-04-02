@@ -47,5 +47,6 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
 
             Reservation = await query.ToListAsync();
         }
+
     }
 }

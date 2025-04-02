@@ -45,6 +45,7 @@
                 <td>@item.GameTable?.Number</td>
                 <td>@item.Member?.Name</td>
                 <td>
+                    <a asp-page="/Reservations/Archive" asp-route-id="@item.Id">Archive</a> |
                     <a asp-page="/Reservations/Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-page="/Reservations/Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-page="/Reservations/Delete" asp-route-id="@item.Id">Delete</a>

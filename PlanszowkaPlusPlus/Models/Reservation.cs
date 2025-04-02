@@ -17,6 +17,7 @@ namespace PlanszowkaPlusPlus.Models
         //relation properties
         public GameTable GameTable { get; set; }
         public Member Member { get; set; }
+
     }
     public class ReservationDTO
     {
