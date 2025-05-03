@@ -7,5 +7,7 @@ namespace PlanszowkaPlusPlus.Models {
         public string Surname { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;//hashing or encryption?
         public DateTime RegistrationDate { get; set; }
+        public string Interests { get; set; } = string.Empty;
+
     }
 }
