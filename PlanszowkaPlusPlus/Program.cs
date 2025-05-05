@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using DotNetEd.CoreAdmin;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Services.AddAuthorization();
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
+builder.Services.AddCoreAdmin();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
@@ -46,14 +48,18 @@ app.UseStaticFiles();
 app.UseAuthentication(); 
 app.UseAuthorization();
 
-// Configure the HTTP request pipeline.
+app.UseCoreAdminCustomAuth(context =>
+{
+    return 
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseStaticFiles();
+app.MapDefaultControllerRoute();
 
 app.MapRazorPages();
 app.MapControllers();
