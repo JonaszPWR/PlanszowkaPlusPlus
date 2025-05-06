@@ -48,7 +48,8 @@ namespace PlanszowkaPlusPlus.Pages.Account
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Email, Credential.Username),
-                        new Claim(ClaimTypes.Name, employee.Name)
+                        new Claim(ClaimTypes.Name, employee.Name),
+                        new Claim(ClaimTypes.Role, "User")
                     };
 
                     var identity = new ClaimsIdentity(claims, "MyCookieAuth");
