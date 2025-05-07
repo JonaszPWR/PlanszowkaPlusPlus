@@ -22,7 +22,7 @@ namespace PlanszowkaPlusPlus.Controllers
         [HttpPost]
         public async Task<IActionResult> AddEmployee(Employee employee)
         {
-            // Hash the employee's password
+            //hash the employee's password
             employee.PasswordHash = _passwordHasher.HashPassword(employee, employee.PasswordHash);
 
             _appDbContext.Employees.Add(employee);

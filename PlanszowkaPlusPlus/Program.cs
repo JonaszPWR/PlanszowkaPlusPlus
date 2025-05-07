@@ -33,6 +33,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
+builder.Services.AddScoped<IPasswordHasher<Admin>, PasswordHasher<Admin>>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
 builder.Services.AddCoreAdmin(restrictToRoles: new[] { "User" });
 builder.Services.AddHttpContextAccessor();
