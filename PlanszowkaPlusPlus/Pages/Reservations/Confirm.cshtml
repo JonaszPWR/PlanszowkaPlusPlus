@@ -1,56 +1,26 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using PlanszowkaPlusPlus.Data;
-using PlanszowkaPlusPlus.Models;
-using System.Text.Json;
+@page
+@model PlanszowkaPlusPlus.Pages.Reservations.ConfirmModel
+@{
+    ViewData["Title"] = "Potwierdź rezerwację";
+}
+<h2>Potwierdzenie rezerwacji</h2>
 
-namespace PlanszowkaPlusPlus.Pages.Reservations
+@if (Model.Request != null)
 {
-    public class ConfirmModel : PageModel
-    {
-        private readonly AppDbContext _context;
+    <dl class="row">
+        <dt class="col-sm-3">Imię i nazwisko:</dt><dd class="col-sm-9">@Model.ReservationRequest.FullName</dd>
+        <dt class="col-sm-3">Email:</dt><dd class="col-sm-9">@Model.ReservationRequest.Email</dd>
+        <dt class="col-sm-3">Data:</dt><dd class="col-sm-9">@Model.ReservationRequest.Date.ToShortDateString()</dd>
+        <dt class="col-sm-3">Godzina:</dt><dd class="col-sm-9">@Model.ReservationRequest.TimeStart - @Model.ReservationRequest.TimeEnd</dd>
+        <dt class="col-sm-3">Stolik:</dt><dd class="col-sm-9">@Model.ReservationRequest.TableId</dd>
+    </dl>
 
-        public ConfirmModel(AppDbContext context)
-        {
-            _context = context;
-        }
-
-        [BindProperty]
-        public ReservationInput? ReservationRequest { get; set; }
-
-        public IActionResult OnGet()
-        {
-            var json = TempData["ReservationRequest"] as string;
-            if (json == null)
-            {
-                return RedirectToPage("/Error");
-            }
-
-            ReservationRequest = JsonSerializer.Deserialize<ReservationInput>(json);
-            return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(string action)
-        {
-            if (ReservationRequest == null)
-                return RedirectToPage("/Error");
-
-            if (action == "confirm")
-            {
-                var reservation = new Reservation
-                {
-                    ReservationDate = DateOnly.FromDateTime(ReservationRequest.Date),
-                    TimeStart = TimeOnly.FromTimeSpan(ReservationRequest.TimeStart),
-                    TimeEnd = TimeOnly.FromTimeSpan(ReservationRequest.TimeEnd),
-                    TableId = ReservationRequest.TableId,
-                    MemberId = 1 //domyślna wartość, do zmiany jeśli trzeba
-                };
-
-                _context.Reservations.Add(reservation);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("/Index");
-        }
-    }
+    <form method="post">
+        <button type="submit" name="action" value="confirm" class="btn btn-success">Potwierdź</button>
+        <button type="submit" name="action" value="reject" class="btn btn-danger">Odrzuć</button>
+    </form>
+}
+else
+{
+    <p class="text-danger">Brak danych do potwierdzenia.</p>
 }
