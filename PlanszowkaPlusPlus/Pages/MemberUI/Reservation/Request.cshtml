@@ -1,34 +1,69 @@
 @page
-@model RequestReservationModel
+@model PlanszowkaPlusPlus.Pages.MemberUI.Reservation.RequestReservationModel
+
 @{
     ViewData["Title"] = "Zgłoś rezerwację";
 }
-<h2>Zgłoś rezerwację stolika</h2>
 
-<form method="post">
-    <div class="form-group">
-        <label>Imię i nazwisko</label>
-        <input asp-for="Input.FullName" class="form-control" required />
+<link rel="stylesheet" href="~/css/site.css" />
+
+<h1>Zgłoś rezerwację stolika</h1>
+
+<h4>Rezerwacja</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Input.FullName" class="control-label"></label>
+                <input asp-for="Input.FullName" class="form-control" />
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Email" class="control-label"></label>
+                <input asp-for="Input.Email" class="form-control" type="email" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Date" class="control-label"></label>
+                <input asp-for="Input.Date" class="form-control" type="date" />
+                <span asp-validation-for="Input.Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.TimeStart" class="control-label"></label>
+                <input asp-for="Input.TimeStart" class="form-control" type="time" />
+                <span asp-validation-for="Input.TimeStart" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.TimeEnd" class="control-label"></label>
+                <input asp-for="Input.TimeEnd" class="form-control" type="time" />
+                <span asp-validation-for="Input.TimeEnd" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.TableId" class="control-label"></label>
+                <select asp-for="Input.TableId" asp-items="Model.Tables" class="form-control"></select>
+                <span asp-validation-for="Input.TableId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Przejdź do potwierdzenia" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input asp-for="Input.Email" class="form-control" required type="email"/>
-    </div>
-    <div class="form-group">
-        <label>Data rezerwacji</label>
-        <input asp-for="Input.Date" class="form-control" type="date" required />
-    </div>
-    <div class="form-group">
-        <label>Godzina rozpoczęcia</label>
-        <input asp-for="Input.TimeStart" class="form-control" type="time" required />
-    </div>
-    <div class="form-group">
-        <label>Godzina zakończenia</label>
-        <input asp-for="Input.TimeEnd" class="form-control" type="time" required />
-    </div>
-    <div class="form-group">
-        <label>Numer stolika</label>
-        <select asp-for="Input.TableId" asp-items="Model.Tables" class="form-control"></select>
-    </div>
-    <button type="submit" class="btn btn-primary">Przejdź do potwierdzenia</button>
+</div>
+
+<form method="get" action="/Index" class="d-inline">
+    <button type="submit" class="btn btn-secondary">Anuluj</button>
 </form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+}
