@@ -5,7 +5,7 @@ using System.Security.Claims;
 
 namespace PlanszowkaPlusPlus.Pages
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "User")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "User,Admin")]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlanszowkaPlusPlus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7aa12d2d968d45595ad9805eb449c90d07db4f32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b30a4cf014b025eceaa471a578b9994167164607")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlanszowkaPlusPlus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlanszowkaPlusPlus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

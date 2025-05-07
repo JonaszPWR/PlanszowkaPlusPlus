@@ -44,6 +44,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

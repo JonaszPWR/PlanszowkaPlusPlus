@@ -1,0 +1,17 @@
+﻿@page
+@model PlanszowkaPlusPlus.Pages.AdminDashboard.IndexModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container border mt-4 p-4">
+    <h1 class="mb-4">Admin Dashboard</h1>
+
+    <div class="list-group">
+        <a href="/Admin/Employees" class="list-group-item list-group-item-action">Manage Employees</a>
+        <a href="/Admin/Admins" class="list-group-item list-group-item-action">Manage Admins</a>
+    </div>
+</div>
