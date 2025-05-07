@@ -8,5 +8,6 @@ namespace PlanszowkaPlusPlus.Models {
         public string Email { get; set; } = string.Empty;//hashing or encryption?
         public string PasswordHash{ get; set; } = string.Empty;//hashing or encryption?
 
+
     }
 }

@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using DotNetEd.CoreAdmin;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +13,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
-builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = "MyCookieAuth";
+    options.DefaultAuthenticateScheme = "MyCookieAuth";
+    options.DefaultSignInScheme = "MyCookieAuth";
+    options.DefaultChallengeScheme = "MyCookieAuth";
+})
+.AddCookie("MyCookieAuth", options =>
 {
     options.Cookie.Name = "MyCookieAuth";
-    options.LoginPath = "/Account/Login";
+    options.Cookie.Path = "/";
+    options.LoginPath = "/Account/Login"; 
+    options.AccessDeniedPath = "/Account/Login";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
     options.SlidingExpiration = true;
 });
@@ -21,7 +33,10 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
 builder.Services.AddAuthorization();
 
 var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
+builder.Services.AddScoped<IPasswordHasher<Admin>, PasswordHasher<Admin>>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
+builder.Services.AddCoreAdmin(restrictToRoles: new[] { "User" });
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
@@ -46,14 +61,32 @@ app.UseStaticFiles();
 app.UseAuthentication(); 
 app.UseAuthorization();
 
-// Configure the HTTP request pipeline.
+app.UseCoreAdminCustomAuth(async serviceProvider =>
+{
+    var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
+    var context = httpContextAccessor.HttpContext;
+
+    if (context == null)
+        return false;
+
+    var result = await context.AuthenticateAsync("MyCookieAuth");
+
+    if (!result.Succeeded || result.Principal == null)
+        return false;
+
+    var user = result.Principal;
+
+    return user.Identity?.IsAuthenticated == true &&
+           user.HasClaim(ClaimTypes.Role, "User");
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseStaticFiles();
+app.MapDefaultControllerRoute();
 
 app.MapRazorPages();
 app.MapControllers();

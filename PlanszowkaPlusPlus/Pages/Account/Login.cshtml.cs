@@ -39,24 +39,24 @@ namespace PlanszowkaPlusPlus.Pages.Account
                     return Page();
                 }
 
-                // Verify password
+                //verify password
                 var passwordCheck = new PasswordHasher<Employee>();
                 var result = passwordCheck.VerifyHashedPassword(employee, employee.PasswordHash, Credential.Password);
                 if (result == PasswordVerificationResult.Success)
                 {
-                    // Create security context
+                    //create security context
                     var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Email, Credential.Username),
-                new Claim(ClaimTypes.Name, employee.Name)
-            };
+                    {
+                        new Claim(ClaimTypes.Email, Credential.Username),
+                        new Claim(ClaimTypes.Name, employee.Name),
+                        new Claim(ClaimTypes.Role, "User")
+                    };
 
                     var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                     var principal = new ClaimsPrincipal(identity);
 
-                    // Sign in user
+                    //sign in user
                     await HttpContext.SignInAsync("MyCookieAuth", principal);
-                    // Redirection
                     return RedirectToPage("/Index");
                 }
                 else

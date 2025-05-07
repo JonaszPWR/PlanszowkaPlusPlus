@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace PlanszowkaPlusPlus.Pages
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "User,Admin")]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -16,7 +17,7 @@ namespace PlanszowkaPlusPlus.Pages
 
         public void OnGet()
         {
-            var authenticated = HttpContext.User.Identity.IsAuthenticated;
+            //var authenticated = HttpContext.User.Identity.IsAuthenticated;
         }
     }
 }
