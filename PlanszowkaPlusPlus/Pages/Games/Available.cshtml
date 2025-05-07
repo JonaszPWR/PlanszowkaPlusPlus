@@ -1,0 +1,39 @@
+@page
+@model PlanszowkaPlusPlus.Pages.Client.GamesListModel
+
+@{
+    ViewData["Title"] = "Available Games";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<h1>Lista dostępnych gier</h1>
+
+@if (!Model.Games.Any())
+{
+    <p>Brak gier w systemie.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tytuł</th>
+                <th>Kategoria</th>
+                <th>Łączna liczba</th>
+                <th>Dostępnych</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var game in Model.Games)
+        {
+            <tr>
+                <td>@game.Title</td>
+                <td>@game.Category</td>
+                <td>@game.TotalNumber</td>
+                <td>@game.AvailableNumber</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
