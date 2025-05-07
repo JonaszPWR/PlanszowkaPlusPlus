@@ -88,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Available.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcQXZhaWxhYmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -152,6 +156,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Reservation/Request.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyVUlcUmVzZXJ2YXRpb25cUmVxdWVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVudGFsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -178,6 +186,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Archived.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEFyY2hpdmVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Confirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXENvbmZpcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Create.cshtml]

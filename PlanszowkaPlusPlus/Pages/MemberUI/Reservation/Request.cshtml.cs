@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
 
-namespace PlanszowkaPlusPlus.Pages.Client
+namespace PlanszowkaPlusPlus.Pages.MemberUI.Reservation
 {
     public class RequestReservationModel : PageModel
     {

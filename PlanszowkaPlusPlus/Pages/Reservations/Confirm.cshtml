@@ -43,7 +43,7 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
                     TimeStart = TimeOnly.FromTimeSpan(ReservationRequest.TimeStart),
                     TimeEnd = TimeOnly.FromTimeSpan(ReservationRequest.TimeEnd),
                     TableId = ReservationRequest.TableId,
-                    MemberId = 1 // domyślna wartość, do zmiany jeśli trzeba
+                    MemberId = 1 //domyślna wartość, do zmiany jeśli trzeba
                 };
 
                 _context.Reservations.Add(reservation);
