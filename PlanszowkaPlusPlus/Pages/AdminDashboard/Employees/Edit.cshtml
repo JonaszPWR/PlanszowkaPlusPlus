@@ -33,6 +33,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Employee.PasswordHash" class="control-label"></label>
+                <p style="color:red">Warning: changing the password hash will likely break the password entirely!</p>
                 <input asp-for="Employee.PasswordHash" class="form-control" />
                 <span asp-validation-for="Employee.PasswordHash" class="text-danger"></span><!--TODO:remove this?-->
             </div>
