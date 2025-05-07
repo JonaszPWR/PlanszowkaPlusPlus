@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PlanszowkaPlusPlus.Pages.AdminDashboard.Employees
 {
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;
