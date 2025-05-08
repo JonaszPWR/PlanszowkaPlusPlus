@@ -25,7 +25,6 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
         public IActionResult OnGet()
         {
-            // If there is already at least one Admin, redirect to login
             if (_context.Admins.Any())
             {
                 return RedirectToPage("/Account/AdminLogin");
@@ -41,7 +40,7 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
             if (_context.Admins.Any())
             {
-                // Prevent race condition where another admin was added
+                //prevent race condition where another admin was added
                 return RedirectToPage("/Account/AdminLogin");
             }
 
