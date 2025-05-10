@@ -13,6 +13,8 @@ namespace PlanszowkaPlusPlus.Data
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Rent> Rentals { get; set; } 
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<ReservationRequest> ReservationRequests { get; set; }
+
 
     }
 }

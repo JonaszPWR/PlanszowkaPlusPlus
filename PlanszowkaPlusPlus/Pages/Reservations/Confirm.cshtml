@@ -1,26 +1,54 @@
 @page
 @model PlanszowkaPlusPlus.Pages.Reservations.ConfirmModel
+
 @{
-    ViewData["Title"] = "Potwierdź rezerwację";
+    ViewData["Title"] = "Confirm";
 }
-<h2>Potwierdzenie rezerwacji</h2>
 
-@if (Model.Request != null)
+<link rel="stylesheet" href="~/css/site.css" />
+
+<h2>Reservation Requests</h2>
+
+@if (!Model.Requests.Any())
 {
-    <dl class="row">
-        <dt class="col-sm-3">Imię i nazwisko:</dt><dd class="col-sm-9">@Model.ReservationRequest.FullName</dd>
-        <dt class="col-sm-3">Email:</dt><dd class="col-sm-9">@Model.ReservationRequest.Email</dd>
-        <dt class="col-sm-3">Data:</dt><dd class="col-sm-9">@Model.ReservationRequest.Date.ToShortDateString()</dd>
-        <dt class="col-sm-3">Godzina:</dt><dd class="col-sm-9">@Model.ReservationRequest.TimeStart - @Model.ReservationRequest.TimeEnd</dd>
-        <dt class="col-sm-3">Stolik:</dt><dd class="col-sm-9">@Model.ReservationRequest.TableId</dd>
-    </dl>
-
-    <form method="post">
-        <button type="submit" name="action" value="confirm" class="btn btn-success">Potwierdź</button>
-        <button type="submit" name="action" value="reject" class="btn btn-danger">Odrzuć</button>
-    </form>
+    <p>No current Requests</p>
 }
 else
 {
-    <p class="text-danger">Brak danych do potwierdzenia.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Imię i nazwisko</th>
+                <th>Email</th>
+                <th>Data</th>
+                <th>Godzina</th>
+                <th>Stolik</th>
+                <th>Akcja</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var r in Model.Requests)
+        {
+            <tr>
+                <td>@r.FullName</td>
+                <td>@r.Email</td>
+                <td>@r.Date</td>
+                <td>@r.TimeStart - @r.TimeEnd</td>
+                <td>@r.TableId</td>
+                <td>
+                    <form method="post">
+                        <input type="hidden" name="requestId" value="@r.Id" />
+                        <input type="hidden" name="action" value="confirm" />
+                        <button type="submit" class="btn btn-success">Confirm</button>
+                    </form>
+                    <form method="post">
+                        <input type="hidden" name="requestId" value="@r.Id" />
+                        <input type="hidden" name="action" value="reject" />
+                        <button type="submit" class="btn btn-danger">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 }

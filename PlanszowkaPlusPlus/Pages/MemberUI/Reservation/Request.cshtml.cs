@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PlanszowkaPlusPlus.Pages.MemberUI.Reservation
 {
@@ -16,35 +17,48 @@ namespace PlanszowkaPlusPlus.Pages.MemberUI.Reservation
         }
 
         [BindProperty]
-        public ReservationInput Input { get; set; } = new();
+        public ReservationRequest Input { get; set; } = new();
 
         public List<SelectListItem> Tables { get; set; } = new();
 
         public void OnGet()
         {
-            Tables = _context.GameTables
-                .Where(t => t.IsFree)
-                .Select(t => new SelectListItem { Value = t.Id.ToString(), Text = $"Stolik {t.Number}" })
-                .ToList();
+            LoadTables();
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
+            LoadTables(); // upewnij się, że lista się ładuje również po błędzie
+
             if (!ModelState.IsValid)
                 return Page();
 
-            TempData["ReservationRequest"] = System.Text.Json.JsonSerializer.Serialize(Input);
-            return RedirectToPage("/Reservations/Confirm");
+            // Sprawdź czy podany e-mail istnieje w bazie członków
+            var member = await _context.Members.FirstOrDefaultAsync(m => m.Email == Input.Email);
+            if (member == null)
+            {
+                ModelState.AddModelError("Input.Email", "Nie znaleziono użytkownika o podanym adresie e-mail.");
+                return Page();
+            }
+
+            // Dodaj zgłoszenie rezerwacji (bez MemberId w modelu)
+            _context.ReservationRequests.Add(Input);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Rezerwacja została zgłoszona i oczekuje na potwierdzenie.";
+            return RedirectToPage(); // zostaje na tej samej stronie
         }
 
-        public class ReservationInput
+        private void LoadTables()
         {
-            public string FullName { get; set; } = "";
-            public string Email { get; set; } = "";
-            public DateTime Date { get; set; }
-            public TimeSpan TimeStart { get; set; }
-            public TimeSpan TimeEnd { get; set; }
-            public int TableId { get; set; }
+            Tables = _context.GameTables
+                .Where(t => t.IsFree)
+                .Select(t => new SelectListItem
+                {
+                    Value = t.Id.ToString(),
+                    Text = $"Stolik {t.Number}"
+                })
+                .ToList();
         }
     }
 }

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
-using System.Text.Json;
 
 namespace PlanszowkaPlusPlus.Pages.Reservations
 {
@@ -15,51 +15,46 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
             _context = context;
         }
 
-        [BindProperty]
-        public ReservationInput? ReservationRequest { get; set; }
+        public List<ReservationRequest> Requests { get; set; } = new();
 
-        public IActionResult OnGet()
+        public async Task OnGetAsync()
         {
-            var json = TempData["ReservationRequest"] as string;
-            if (json == null)
-            {
-                return RedirectToPage("/Error");
-            }
-
-            ReservationRequest = JsonSerializer.Deserialize<ReservationInput>(json);
-            return Page();
+            Requests = await _context.ReservationRequests.ToListAsync();
         }
 
-        public async Task<IActionResult> OnPostAsync(string action)
+        public async Task<IActionResult> OnPostAsync(int requestId, string action)
         {
-            if (ReservationRequest == null)
+            var request = await _context.ReservationRequests.FindAsync(requestId);
+
+            if (request == null)
                 return RedirectToPage("/Error");
 
             if (action == "confirm")
             {
+                var member = await _context.Members.FirstOrDefaultAsync(m => m.Email == request.Email);
+                if (member == null)
+                {
+                    ModelState.AddModelError("", "Nie znaleziono członka o podanym adresie email.");
+                    return RedirectToPage(); // lub zwróć Page() jeśli chcesz pokazać błąd
+                }
+
                 var reservation = new Reservation
                 {
-                    ReservationDate = DateOnly.FromDateTime(ReservationRequest.Date),
-                    TimeStart = TimeOnly.FromTimeSpan(ReservationRequest.TimeStart),
-                    TimeEnd = TimeOnly.FromTimeSpan(ReservationRequest.TimeEnd),
-                    TableId = ReservationRequest.TableId,
-                    MemberId = 1 // domyślna wartość, do zmiany jeśli trzeba
+                    ReservationDate = request.Date,
+                    TimeStart = request.TimeStart,
+                    TimeEnd = request.TimeEnd,
+                    TableId = request.TableId,
+                    MemberId = member.Id
                 };
 
                 _context.Reservations.Add(reservation);
-                await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("/Index");
-        }
-        public class ReservationInput
-        {
-            public string FullName { get; set; } = "";
-            public string Email { get; set; } = "";
-            public DateTime Date { get; set; }
-            public TimeSpan TimeStart { get; set; }
-            public TimeSpan TimeEnd { get; set; }
-            public int TableId { get; set; }
+            // W obu przypadkach usuwamy żądanie (zatwierdzone lub odrzucone)
+            _context.ReservationRequests.Remove(request);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage(); // wraca na listę
         }
     }
 }
