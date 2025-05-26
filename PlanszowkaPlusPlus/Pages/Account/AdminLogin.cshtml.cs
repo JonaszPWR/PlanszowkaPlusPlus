@@ -62,7 +62,7 @@ namespace PlanszowkaPlusPlus.Pages.Account
             return RedirectToPage("/AdminDashboard");
         }
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGetAsync()
         {
             if (!_context.Admins.Any())
             {

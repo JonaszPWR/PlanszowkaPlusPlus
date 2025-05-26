@@ -57,8 +57,17 @@
 
     </tbody>
 </table>
+
 <div>
-    <form method="get" action="/Index" class="d-inline">
-        <button type="submit" class="btn btn-secondary">Main page</Main></button>
-    </form>
+    <div>
+        <form method="get" action="/Index" class="d-inline">
+            <button type="submit" class="btn btn-secondary">Main page</button>
+        </form>
+    </div>
+    <div>
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="/AdminDashboard" class="btn btn-secondary">Admin Dashboard</a>
+        }
+    </div>
 </div>

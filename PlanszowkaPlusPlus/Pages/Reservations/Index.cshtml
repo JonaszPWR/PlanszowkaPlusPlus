@@ -59,7 +59,13 @@
 <div>
     <div>
         <form method="get" action="/Index" class="d-inline">
-            <button type="submit" class="btn btn-secondary">Main Page</button>
+            <button type="submit" class="btn btn-secondary">Main page</button>
         </form>
+    </div>
+    <div>
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="/AdminDashboard" class="btn btn-secondary">Admin Dashboard</a>
+        }
     </div>
 </div>
