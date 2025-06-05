@@ -11,7 +11,7 @@ using PlanszowkaPlusPlus.Models;
 
 namespace PlanszowkaPlusPlus.Pages.Members
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]//THIS SHIT IS IT!
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class IndexModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;

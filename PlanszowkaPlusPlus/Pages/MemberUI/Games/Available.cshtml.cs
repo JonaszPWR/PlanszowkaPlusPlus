@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PlanszowkaPlusPlus.Pages.Client
 {
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Member")]
     public class GamesListModel : PageModel
     {
         private readonly AppDbContext _context;

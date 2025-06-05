@@ -4,9 +4,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace PlanszowkaPlusPlus.Pages.MemberUI.Reservation
 {
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Member")]
+
     public class RequestReservationModel : PageModel
     {
         private readonly AppDbContext _context;

@@ -12,7 +12,7 @@ using PlanszowkaPlusPlus.Models;
 
 namespace PlanszowkaPlusPlus.Pages.Rentals
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class EditModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;

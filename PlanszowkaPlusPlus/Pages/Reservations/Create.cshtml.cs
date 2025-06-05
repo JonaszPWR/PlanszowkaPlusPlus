@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PlanszowkaPlusPlus.Pages.Reservations
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class CreateModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;

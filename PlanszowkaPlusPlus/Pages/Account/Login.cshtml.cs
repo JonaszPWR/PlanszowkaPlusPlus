@@ -1,82 +1,88 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
-using PlanszowkaPlusPlus.Controllers;
-using PlanszowkaPlusPlus.Pages.Games;
-using System.ComponentModel.DataAnnotations;
 using PlanszowkaPlusPlus.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace PlanszowkaPlusPlus.Pages.Account
 {
     public class LoginModel : PageModel
     {
         private readonly Data.AppDbContext _context;
+
         public LoginModel(Data.AppDbContext context)
         {
             _context = context;
         }
+
         [BindProperty]
         public Credential Credential { get; set; }
 
-        public void OnGet()
-        {
-        }
+        public void OnGet() { }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid) return Page();
 
-            try
+            // Sprawdzenie jako Employee
+            var employee = _context.Employees.SingleOrDefault(e => e.Email == Credential.Username);
+            if (employee != null)
             {
-                Employee? employee = _context.Employees.SingleOrDefault(e => e.Email == Credential.Username);
-                if (employee == null)
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return Page();
-                }
-
-                //verify password
                 var passwordCheck = new PasswordHasher<Employee>();
                 var result = passwordCheck.VerifyHashedPassword(employee, employee.PasswordHash, Credential.Password);
                 if (result == PasswordVerificationResult.Success)
                 {
-                    //create security context
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Email, Credential.Username),
+                        new Claim(ClaimTypes.Email, employee.Email),
                         new Claim(ClaimTypes.Name, employee.Name),
-                        new Claim(ClaimTypes.Role, "User")
+                        new Claim(ClaimTypes.Role, "Employee")
                     };
 
                     var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                     var principal = new ClaimsPrincipal(identity);
 
-                    //sign in user
                     await HttpContext.SignInAsync("MyCookieAuth", principal);
-                    return RedirectToPage("/Index");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return RedirectToPage("/Index"); // strona pracownika
                 }
             }
-            catch (Exception e)
+
+            // Sprawdzenie jako Member
+            var member = _context.Members.SingleOrDefault(m => m.Email == Credential.Username);
+            if (member != null)
             {
-                Console.WriteLine($"An error occurred: {e.Message}");
-                ModelState.AddModelError(string.Empty, "An error occurred. Please try again.");
+                var passwordCheck = new PasswordHasher<Member>();
+                var result = passwordCheck.VerifyHashedPassword(member, member.PasswordHash, Credential.Password);
+                if (result == PasswordVerificationResult.Success)
+                {
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Email, member.Email),
+                        new Claim(ClaimTypes.Name, member.Name),
+                        new Claim(ClaimTypes.Role, "Member")
+                    };
+
+                    var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+                    var principal = new ClaimsPrincipal(identity);
+
+                    await HttpContext.SignInAsync("MyCookieAuth", principal);
+                    return RedirectToPage("/MemberUI/Index"); // strona klienta
+                }
             }
+
+            ModelState.AddModelError(string.Empty, "Nieprawidłowy login lub hasło.");
             return Page();
         }
     }
+
     public class Credential
     {
         [Required]
         [Display(Name = "Email")]
         public string Username { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }

@@ -1,35 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace PlanszowkaPlusPlus.Pages.Members
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class CreateModel : PageModel
     {
-        private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;
+        private readonly AppDbContext _context;
+        private readonly IPasswordHasher<Member> _hasher;
 
-        public CreateModel(PlanszowkaPlusPlus.Data.AppDbContext context)
+        public CreateModel(AppDbContext context, IPasswordHasher<Member> hasher)
         {
             _context = context;
+            _hasher = hasher;
         }
+
+        [BindProperty]
+        public Member Member { get; set; } = default!;
+
+        [BindProperty]
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = string.Empty;
 
         public IActionResult OnGet()
         {
             return Page();
         }
 
-        [BindProperty]
-        public Member Member { get; set; } = default!;
-
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -37,6 +40,7 @@ namespace PlanszowkaPlusPlus.Pages.Members
                 return Page();
             }
 
+            Member.PasswordHash = _hasher.HashPassword(Member, Password);
             _context.Members.Add(Member);
             await _context.SaveChangesAsync();
 
