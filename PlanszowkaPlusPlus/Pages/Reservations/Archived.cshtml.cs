@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace PlanszowkaPlusPlus.Pages.Reservations
 {
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class ArchivedModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;
@@ -19,7 +22,7 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
             _context = context;
         }
 
-        public IList<Reservation> Reservation { get;set; } = default!;
+        public IList<Reservation> Reservation { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
@@ -38,7 +41,7 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
             reservation.IsArchived = false;
             await _context.SaveChangesAsync();
 
-            return RedirectToPage(); 
+            return RedirectToPage();
         }
     }
 }

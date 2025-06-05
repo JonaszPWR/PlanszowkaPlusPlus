@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace PlanszowkaPlusPlus.Pages.Reservations
 {
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class ConfirmModel : PageModel
     {
         private readonly AppDbContext _context;

@@ -1,84 +1,52 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
 using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using DotNetEd.CoreAdmin;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddRazorPages();
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultScheme = "MyCookieAuth";
-    options.DefaultAuthenticateScheme = "MyCookieAuth";
-    options.DefaultSignInScheme = "MyCookieAuth";
-    options.DefaultChallengeScheme = "MyCookieAuth";
-})
-.AddCookie("MyCookieAuth", options =>
-{
-    options.Cookie.Name = "MyCookieAuth";
-    options.Cookie.Path = "/";
-    options.LoginPath = "/Account/Login"; 
-    options.AccessDeniedPath = "/Account/Login";
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
-    options.SlidingExpiration = true;
-});
+
+var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddAuthentication("MyCookieAuth")
+    .AddCookie("MyCookieAuth", options =>
+    {
+        options.Cookie.Name = "MyCookieAuth";
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/Login";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        options.SlidingExpiration = true;
+    });
 
 builder.Services.AddAuthorization();
 
-var connectString = builder.Configuration.GetConnectionString("AppDbConnectionString");
-builder.Services.AddScoped<IPasswordHasher<Admin>, PasswordHasher<Admin>>();
-builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectString, ServerVersion.AutoDetect(connectString)));
-builder.Services.AddCoreAdmin(restrictToRoles: new[] { "User" });
-builder.Services.AddHttpContextAccessor();
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
-    
 builder.Services.AddScoped<IPasswordHasher<Employee>, PasswordHasher<Employee>>();
+builder.Services.AddScoped<IPasswordHasher<Member>, PasswordHasher<Member>>();
+builder.Services.AddScoped<IPasswordHasher<Admin>, PasswordHasher<Admin>>();
+
+builder.Services.AddCoreAdmin(restrictToRoles: new[] { "Admin" });
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    if(!dbContext.Database.CanConnect())
+    if (!dbContext.Database.CanConnect())
     {
-        throw new NotImplementedException("Can't connect to database");
+        throw new Exception("Database connection failed.");
     }
 }
-app.UseHttpsRedirection();
-app.UseRouting();
-app.UseStaticFiles();
-
-app.UseAuthentication(); 
-app.UseAuthorization();
-
-app.UseCoreAdminCustomAuth(async serviceProvider =>
-{
-    var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
-    var context = httpContextAccessor.HttpContext;
-
-    if (context == null)
-        return false;
-
-    var result = await context.AuthenticateAsync("MyCookieAuth");
-
-    if (!result.Succeeded || result.Principal == null)
-        return false;
-
-    var user = result.Principal;
-
-    return user.Identity?.IsAuthenticated == true &&
-           user.HasClaim(ClaimTypes.Role, "User");
-});
 
 if (app.Environment.IsDevelopment())
 {
@@ -86,7 +54,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapDefaultControllerRoute();
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseCoreAdminCustomAuth(async serviceProvider =>
+{
+    var context = serviceProvider.GetRequiredService<IHttpContextAccessor>().HttpContext;
+    var result = await context.AuthenticateAsync("MyCookieAuth");
+    return result.Succeeded && result.Principal.HasClaim(ClaimTypes.Role, "Admin");
+});
 
 app.MapRazorPages();
 app.MapControllers();

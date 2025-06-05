@@ -11,7 +11,7 @@ using PlanszowkaPlusPlus.Models;
 
 namespace PlanszowkaPlusPlus.Pages.Members
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class DetailsModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;

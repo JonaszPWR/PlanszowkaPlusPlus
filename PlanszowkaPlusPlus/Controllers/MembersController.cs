@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PlanszowkaPlusPlus.Data;
@@ -11,9 +12,11 @@ namespace PlanszowkaPlusPlus.Controllers
     public class MembersController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
-        public MembersController(AppDbContext appDbContext)
+        private readonly IPasswordHasher<Member> _passwordHasher;
+        public MembersController(AppDbContext appDbContext, IPasswordHasher<Member> passwordHasher)
         {
             _appDbContext = appDbContext;
+            _passwordHasher = passwordHasher;
         }
 
         [HttpPost]
@@ -23,6 +26,9 @@ namespace PlanszowkaPlusPlus.Controllers
             //{ 
             //    member.Rent = new List<Rent>();
             //}
+
+            member.PasswordHash = _passwordHasher.HashPassword(member, member.PasswordHash);
+
             _appDbContext.Members.Add(member);
             await _appDbContext.SaveChangesAsync();
 

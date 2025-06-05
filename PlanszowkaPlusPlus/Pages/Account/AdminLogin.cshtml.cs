@@ -59,7 +59,7 @@ namespace PlanszowkaPlusPlus.Pages.Account
 
             await HttpContext.SignInAsync("MyCookieAuth", principal);
 
-            return RedirectToPage("/AdminDashboard");
+            return RedirectToPage("/AdminDashboard/Index");
         }
 
         public IActionResult OnGetAsync()

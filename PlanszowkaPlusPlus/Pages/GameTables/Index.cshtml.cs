@@ -11,7 +11,7 @@ using PlanszowkaPlusPlus.Models;
 
 namespace PlanszowkaPlusPlus.Pages.GameTables
 {
-    [Authorize(AuthenticationSchemes = "MyCookieAuth")]
+    [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class IndexModel : PageModel
     {
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;
