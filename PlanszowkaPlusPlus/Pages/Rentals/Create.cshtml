@@ -16,22 +16,22 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Rent.RentDate" class="control-label"></label>
-                <input asp-for="Rent.RentDate" class="form-control" type="date" />
-                <span asp-validation-for="Rent.RentDate" class="text-danger"></span>
+                <label asp-for="RentInfo.RentDate" class="control-label"></label>
+                <input asp-for="RentInfo.RentDate" class="form-control" type="date" />
+                <span asp-validation-for="RentInfo.RentDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Rent.ReturnDate" class="control-label"></label>
-                <input asp-for="Rent.ReturnDate" class="form-control" type="date" />
-                <span asp-validation-for="Rent.ReturnDate" class="text-danger"></span>
+                <label asp-for="RentInfo.ReturnDate" class="control-label"></label>
+                <input asp-for="RentInfo.ReturnDate" class="form-control" type="date" />
+                <span asp-validation-for="RentInfo.ReturnDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Rent.GameId" class="control-label"></label>
-                <select asp-for="Rent.GameId" class ="form-control" asp-items="ViewBag.GameId"></select>
+                <label asp-for="RentInfo.GameId" class="control-label"></label>
+                <select asp-for="RentInfo.GameId" class="form-control" asp-items="ViewBag.GameId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Rent.MemberId" class="control-label"></label>
-                <select asp-for="Rent.MemberId" class ="form-control" asp-items="ViewBag.MemberId"></select>
+                <label asp-for="RentInfo.MemberId" class="control-label"></label>
+                <select asp-for="RentInfo.MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

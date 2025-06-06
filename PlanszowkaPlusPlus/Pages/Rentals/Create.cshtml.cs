@@ -29,9 +29,8 @@ namespace PlanszowkaPlusPlus.Pages.Rentals
         }
 
         [BindProperty]
-        public Rent Rent { get; set; } = default!;
+        public RentDTO RentInfo { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -39,7 +38,30 @@ namespace PlanszowkaPlusPlus.Pages.Rentals
                 return Page();
             }
 
-            _context.Rentals.Add(Rent);
+            Game? game = await _context.Games.FindAsync(RentInfo.GameId);
+            Member? member = await _context.Members.FindAsync(RentInfo.MemberId);
+
+            if (null == game || game.AvailableNumber <= 0)
+            {
+                ModelState.AddModelError("RentInfo.GameId", "The selected game is not available.");
+                return Page();//TODO: separate errors for null and none in storage?
+            }
+
+            if (null == member)
+            {
+                ModelState.AddModelError("RentInfo.MemberId", "The selected member no longer exists.");
+                return Page();
+            }
+            
+            _context.Rentals.Add(new Rent
+            {
+                RentDate = RentInfo.RentDate,
+                ReturnDate = RentInfo.ReturnDate,
+                MemberId =  RentInfo.MemberId,
+                GameId = RentInfo.GameId,
+                Member = member,
+                Game = game
+            });
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -54,16 +54,16 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
 
             if (null == table)
             {
-                ModelState.AddModelError("Reservation.TableId", "The selected table no longer exists.");
+                ModelState.AddModelError("ReservationInfo.TableId", "The selected table no longer exists.");
                 return Page();
             }
 
             if (null == member)
             {
-                ModelState.AddModelError("Reservation.MemberId", "The selected member no longer exists.");
+                ModelState.AddModelError("ReservationInfo.MemberId", "The selected member no longer exists.");
                 return Page();
             }
-            //build a Reservation from DTO and found member + table
+
             _context.Reservations.Add(new Reservation
             {
                 ReservationDate = ReservationInfo.ReservationDate,
