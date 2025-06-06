@@ -38,7 +38,7 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
                 if (member == null)
                 {
                     ModelState.AddModelError("", "Nie znaleziono członka o podanym adresie email.");
-                    return RedirectToPage(); // lub zwróć Page() jeśli chcesz pokazać błąd
+                    return RedirectToPage(); //TODO:zwróć Page() jeśli chcesz pokazać błąd
                 }
 
                 var reservation = new Reservation
