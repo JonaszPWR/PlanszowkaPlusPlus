@@ -24,7 +24,7 @@ namespace PlanszowkaPlusPlus.Pages.Rentals
 
         public IActionResult OnGet()
         {
-            Rent = new Rent
+            RentInfo = new RentDTO
             {
                 RentDate = DateOnly.FromDateTime(DateTime.Today),
                 ReturnDate = DateOnly.FromDateTime(DateTime.Today.AddDays(7))
