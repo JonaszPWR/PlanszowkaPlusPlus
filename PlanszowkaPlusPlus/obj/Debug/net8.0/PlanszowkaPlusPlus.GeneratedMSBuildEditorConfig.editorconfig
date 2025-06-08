@@ -17,217 +17,225 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PlanszowkaPlusPlus
 build_property.RootNamespace = PlanszowkaPlusPlus
-build_property.ProjectDir = C:\Users\Jonasz\Documents\GitHub\PlanszowkaPlusPlus\PlanszowkaPlusPlus\
+build_property.ProjectDir = C:\Users\Ja\planszowka\PlanszowkaPlusPlus\PlanszowkaPlusPlus\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Jonasz\Documents\GitHub\PlanszowkaPlusPlus\PlanszowkaPlusPlus
+build_property.MSBuildProjectDirectory = C:\Users\Ja\planszowka\PlanszowkaPlusPlus\PlanszowkaPlusPlus
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/AdminLogin.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/AdminLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBZG1pbkxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/InitialAdminSetup.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/InitialAdminSetup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxJbml0aWFsQWRtaW5TZXR1cC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/Login.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/Logout.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcQWRtaW5pc3RyYXRvcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcQWRtaW5pc3RyYXRvcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcQWRtaW5pc3RyYXRvcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcQWRtaW5pc3RyYXRvcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Administrators/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcQWRtaW5pc3RyYXRvcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/AdminDashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Games/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZVRhYmxlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZVRhYmxlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZVRhYmxlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZVRhYmxlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/GameTables/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtZVRhYmxlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Members/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Games/Available.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Games/Available.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyVUlcR2FtZXNcQXZhaWxhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyVUlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Reservation/Request.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/MemberUI/Reservation/Request.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVtYmVyVUlcUmVzZXJ2YXRpb25cUmVxdWVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVudGFsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVudGFsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVudGFsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVudGFsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Rentals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVudGFsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Archive.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Archive.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEFyY2hpdmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Archived.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Archived.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEFyY2hpdmVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Confirm.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Confirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXENvbmZpcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Create.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Delete.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Details.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Edit.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Index.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Reservations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXJ2YXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_LoginStatusPartial.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_LoginStatusPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblN0YXR1c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/_ViewImports.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jonasz/Documents/GitHub/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_Layout.cshtml]
+[C:/Users/Ja/planszowka/PlanszowkaPlusPlus/PlanszowkaPlusPlus/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lno80dh5w9
