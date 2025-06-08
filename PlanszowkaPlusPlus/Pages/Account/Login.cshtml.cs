@@ -61,6 +61,7 @@ namespace PlanszowkaPlusPlus.Pages.Account
                     {
                         new Claim(ClaimTypes.Email, member.Email),
                         new Claim(ClaimTypes.Name, member.Name),
+                        new Claim(ClaimTypes.Surname, member.Surname),
                         new Claim(ClaimTypes.Role, "Member")
                     };
 
