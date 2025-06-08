@@ -6,10 +6,13 @@ using PlanszowkaPlusPlus.Data;
 using PlanszowkaPlusPlus.Models;
 using DotNetEd.CoreAdmin;
 using System.Security.Claims;
+using PlanszowkaPlusPlus.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<EmailService>();
 builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -33,6 +36,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IPasswordHasher<Employee>, PasswordHasher<Employee>>();
 builder.Services.AddScoped<IPasswordHasher<Member>, PasswordHasher<Member>>();
 builder.Services.AddScoped<IPasswordHasher<Admin>, PasswordHasher<Admin>>();
+builder.Services.AddScoped<ReservationReminderService>();
 
 builder.Services.AddCoreAdmin(restrictToRoles: new[] { "Admin" });
 builder.Services.AddHttpContextAccessor();

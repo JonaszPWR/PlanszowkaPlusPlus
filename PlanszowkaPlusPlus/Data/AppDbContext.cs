@@ -15,6 +15,7 @@ namespace PlanszowkaPlusPlus.Data
         public DbSet<Admin> Admins { get; set; }
         public DbSet<ReservationRequest> ReservationRequests { get; set; }
 
+        public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
     }
 }
