@@ -14,6 +14,7 @@ namespace PlanszowkaPlusPlus.Pages.Rentals
     [Authorize(AuthenticationSchemes = "MyCookieAuth", Roles = "Employee,Admin")]
     public class CreateModel : PageModel
     {
+        
         private readonly PlanszowkaPlusPlus.Data.AppDbContext _context;
 
         public CreateModel(PlanszowkaPlusPlus.Data.AppDbContext context)
@@ -23,8 +24,13 @@ namespace PlanszowkaPlusPlus.Pages.Rentals
 
         public IActionResult OnGet()
         {
-        ViewData["GameId"] = new SelectList(_context.Games, "Id", "Id");
-        ViewData["MemberId"] = new SelectList(_context.Members, "Id", "Id");
+            Rent = new Rent
+            {
+                RentDate = DateOnly.FromDateTime(DateTime.Today),
+                ReturnDate = DateOnly.FromDateTime(DateTime.Today.AddDays(7))
+            };
+            ViewData["GameId"] = new SelectList(_context.Games, "Id", "Id");
+            ViewData["MemberId"] = new SelectList(_context.Members, "Id", "Id");
             return Page();
         }
 

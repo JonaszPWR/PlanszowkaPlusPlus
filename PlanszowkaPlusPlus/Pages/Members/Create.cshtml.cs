@@ -40,6 +40,7 @@ namespace PlanszowkaPlusPlus.Pages.Members
                 return Page();
             }
 
+            Member.RegistrationDate = DateTime.Now;
             Member.PasswordHash = _hasher.HashPassword(Member, Password);
             _context.Members.Add(Member);
             await _context.SaveChangesAsync();
