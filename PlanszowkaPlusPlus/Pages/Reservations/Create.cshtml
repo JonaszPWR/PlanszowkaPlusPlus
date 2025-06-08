@@ -21,34 +21,34 @@
     <div class="col-md-4">
         <form method="post">
             <div class="form-group">
-                <label asp-for="Reservation.ReservationDate" class="control-label"></label>
-                <input asp-for="Reservation.ReservationDate" class="form-control" type="date"/>
-                <span asp-validation-for="Reservation.ReservationDate" class="text-danger"></span>
+                <label asp-for="ReservationInfo.ReservationDate" class="control-label"></label>
+                <input asp-for="ReservationInfo.ReservationDate" class="form-control" type="date" />
+                <span asp-validation-for="ReservationInfo.ReservationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Reservation.TimeStart" class="control-label"></label>
-                <input asp-for="Reservation.TimeStart" class="form-control" type="time"/>
-                <span asp-validation-for="Reservation.TimeStart" class="text-danger"></span>
+                <label asp-for="ReservationInfo.TimeStart" class="control-label"></label>
+                <input asp-for="ReservationInfo.TimeStart" class="form-control" type="time" />
+                <span asp-validation-for="ReservationInfo.TimeStart" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Reservation.TimeEnd" class="control-label"></label>
-                <input asp-for="Reservation.TimeEnd" class="form-control" type="time"/>
-                <span asp-validation-for="Reservation.TimeEnd" class="text-danger"></span>
+                <label asp-for="ReservationInfo.TimeEnd" class="control-label"></label>
+                <input asp-for="ReservationInfo.TimeEnd" class="form-control" type="time" />
+                <span asp-validation-for="ReservationInfo.TimeEnd" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Reservation.TableId" class="control-label"></label>
-                <select asp-for="Reservation.TableId" class ="form-control" asp-items="@(ViewData["TableId"] as SelectList)">
+                <label asp-for="ReservationInfo.TableId" class="control-label"></label>
+                <select asp-for="ReservationInfo.TableId" class="form-control" asp-items="@(ViewData["TableId"] as SelectList)">
                     <option value="">-- Select a Table --</option>
                 </select>
-                <span asp-validation-for="Reservation.TableId" class="text-danger"></span>
+                <span asp-validation-for="ReservationInfo.TableId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Reservation.MemberId" class="control-label"></label>
-                <select asp-for="Reservation.MemberId" class ="form-control" asp-items="@(ViewData["MemberId"] as SelectList)">
+                <label asp-for="ReservationInfo.MemberId" class="control-label"></label>
+                <select asp-for="ReservationInfo.MemberId" class="form-control" asp-items="@(ViewData["MemberId"] as SelectList)">
                     <option value="">-- Select a Member --</option>
                 </select>
-                <span asp-validation-for="Reservation.MemberId" class="text-danger"></span>
+                <span asp-validation-for="ReservationInfo.MemberId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

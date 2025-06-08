@@ -30,7 +30,7 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
 
             if (tables.Count == 0 || members.Count == 0)
             {
-                // Optionally handle the case where there are no tables or members in the database
+                //optionally handle the case where there are no tables or members in the database
                 ModelState.AddModelError(string.Empty, "No tables or members available to create a reservation.");
             }
 
@@ -40,9 +40,8 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
         }
 
         [BindProperty]
-        public Reservation Reservation { get; set; } = default!;
+        public ReservationDTO ReservationInfo { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -50,22 +49,33 @@ namespace PlanszowkaPlusPlus.Pages.Reservations
                 return Page();
             }
 
-            bool tableExists = await _context.GameTables.AnyAsync(t => t.Id == Reservation.TableId);
-            bool memberExists = await _context.Members.AnyAsync(m => m.Id == Reservation.MemberId);
+            GameTable? table = await _context.GameTables.FindAsync(ReservationInfo.TableId);
+            Member? member = await _context.Members.FindAsync(ReservationInfo.MemberId);
 
-            if (!tableExists)
+            if (null == table)
             {
-                ModelState.AddModelError("Reservation.TableId", "The selected table no longer exists.");
+                ModelState.AddModelError("ReservationInfo.TableId", "The selected table no longer exists.");
                 return Page();
             }
 
-            if (!memberExists)
+            if (null == member)
             {
-                ModelState.AddModelError("Reservation.MemberId", "The selected member no longer exists.");
+                ModelState.AddModelError("ReservationInfo.MemberId", "The selected member no longer exists.");
                 return Page();
             }
 
-            _context.Reservations.Add(Reservation);
+            _context.Reservations.Add(new Reservation
+            {
+                ReservationDate = ReservationInfo.ReservationDate,
+                TimeStart = ReservationInfo.TimeStart,
+                TimeEnd = ReservationInfo.TimeEnd,
+                IsArchived = false,
+                TableId = table.Id,
+                MemberId = member.Id,
+                GameTable = table,
+                Member = member,
+
+            });
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
