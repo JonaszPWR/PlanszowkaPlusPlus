@@ -1,6 +1,6 @@
 # PlanszówkaPlusPlus
 
-![Logo](PlanszowkaPlusPlus/PlanszowkaPlusPlus/wwwroot/planszowkaPlusPlusLogov2.png)
+![Logo](docs//logo.png)
 
 ![.NET](https://img.shields.io/badge/.NET-8-blue)
 ![Database](https://img.shields.io/badge/Database-MySQL-orange)
@@ -20,7 +20,7 @@ The goal is to support the organization of a hypothetical board game store/club,
 ## Quick Start
 
 ```bash
-git clone [repo]
+git clone https://github.com/JonaszPWR/PlanszowkaPlusPlus
 cd PlanszowkaPlusPlus/PlanszowkaPlusPlus
 dotnet restore
 dotnet ef database update
