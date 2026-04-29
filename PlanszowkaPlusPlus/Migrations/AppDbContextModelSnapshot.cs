@@ -158,6 +158,28 @@ namespace PlanszowkaPlusPlus.Migrations
                     b.ToTable("Members");
                 });
 
+            modelBuilder.Entity("PlanszowkaPlusPlus.Models.PasswordResetToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Expiration")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PasswordResetTokens");
+                });
+
             modelBuilder.Entity("PlanszowkaPlusPlus.Models.Rent", b =>
                 {
                     b.Property<int>("Id")

@@ -12,8 +12,8 @@ using PlanszowkaPlusPlus.Data;
 namespace PlanszowkaPlusPlus.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250505093050_Member_interests")]
-    partial class Member_interests
+    [Migration("20260429100457_DbInit")]
+    partial class DbInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,31 @@ namespace PlanszowkaPlusPlus.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("PlanszowkaPlusPlus.Models.Admin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admins");
+                });
 
             modelBuilder.Entity("PlanszowkaPlusPlus.Models.Employee", b =>
                 {
@@ -120,6 +145,10 @@ namespace PlanszowkaPlusPlus.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime(6)");
 
@@ -130,6 +159,28 @@ namespace PlanszowkaPlusPlus.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Members");
+                });
+
+            modelBuilder.Entity("PlanszowkaPlusPlus.Models.PasswordResetToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Expiration")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PasswordResetTokens");
                 });
 
             modelBuilder.Entity("PlanszowkaPlusPlus.Models.Rent", b =>
@@ -194,6 +245,39 @@ namespace PlanszowkaPlusPlus.Migrations
                     b.HasIndex("TableId");
 
                     b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("PlanszowkaPlusPlus.Models.ReservationRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("TableId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeOnly>("TimeEnd")
+                        .HasColumnType("time(6)");
+
+                    b.Property<TimeOnly>("TimeStart")
+                        .HasColumnType("time(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReservationRequests");
                 });
 
             modelBuilder.Entity("PlanszowkaPlusPlus.Models.Rent", b =>
